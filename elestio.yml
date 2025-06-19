@@ -1,35 +1,4 @@
 config:
-  runTime: 'Dockerfile'
-  version: ''
-  framework: ''
-  buildCommand: ''
-  buildDir: ''
-  runCommand: ''
-  installCommand: ''
-  
-ports:
-  - protocol: "HTTPS"
-    targetProtocol: "HTTP"
-    listeningPort: "443"
-    targetPort: "3000"
-    targetIP: "172.17.0.1"
-    public: true
-    path: "/"
-    isAuth: false
-
-environments:
-  - key: 'NODE_ENV'
-    value: 'production'
-  - key: 'PORT'
-    value: '3000'
-  - key: 'DATAFORSEO_USERNAME'
-    value: 'stuartr@sewo.io'
-  - key: 'DATAFORSEO_PASSWORD'
-    value: 'dataForSEO-ASTA@2'
-  - key: 'ENABLED_MODULES'
-    value: 'SERP,KEYWORDS_DATA,ONPAGE,DATAFORSEO_LABS,BACKLINKS,BUSINESS_DATA,DOMAIN_ANALYTICS'
-
-    config:
   runTime: 'NodeJs'
   version: '20'
   framework: 'NoFramework'
@@ -57,6 +26,6 @@ environments:
   - key: 'DATAFORSEO_USERNAME'
     value: 'stuartr@sewo.io'
   - key: 'DATAFORSEO_PASSWORD'
-    value: 'dataForSEO-ASTA@2'
+    value: '23705ffff34b663c'
   - key: 'ENABLED_MODULES'
     value: 'SERP,KEYWORDS_DATA,ONPAGE,DATAFORSEO_LABS,BACKLINKS,BUSINESS_DATA,DOMAIN_ANALYTICS'
