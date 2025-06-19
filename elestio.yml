@@ -25,6 +25,6 @@ environments:
   - key: 'DATAFORSEO_USERNAME'
     value: 'stuartr@sewo.io'
   - key: 'DATAFORSEO_PASSWORD'
-    value: '23705ffff34b663c'
+    value: 'dataForSEO-ASTA@2'
   - key: 'ENABLED_MODULES'
     value: 'SERP,KEYWORDS_DATA,ONPAGE,DATAFORSEO_LABS,BACKLINKS,BUSINESS_DATA,DOMAIN_ANALYTICS'
