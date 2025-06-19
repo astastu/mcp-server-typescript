@@ -7,7 +7,7 @@
     "dataforseo-mcp-server": "./build/cli.js"
   },
   "scripts": {
-    "build": "tsc && node -e \"require('fs').chmodSync('build/cli.js', '755')\"",
+    "build": "npx tsc --project ./tsconfig.json && node -e \"require('fs').chmodSync('build/cli.js', '755')\"",
     "start": "node build/index.js",
     "dev": "tsc --watch",
     "prepare": "npm run build",
@@ -36,7 +36,7 @@
   },
   "homepage": "https://github.com/dataforseo/mcp-server-typescript#readme",
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=18.0.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.1",
