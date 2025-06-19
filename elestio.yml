@@ -1,11 +1,11 @@
 config:
-  runTime: 'NodeJs'
-  version: '20'
-  framework: 'NoFramework'
-  buildCommand: 'npm run build'
-  buildDir: 'build'
-  runCommand: 'node build/index.js'
-  installCommand: 'npm install'
+  runTime: 'Dockerfile'
+  version: ''
+  framework: ''
+  buildCommand: ''
+  buildDir: ''
+  runCommand: ''
+  installCommand: ''
   
 ports:
   - protocol: "HTTPS"
