@@ -1,19 +1,26 @@
-FROM node:20
+FROM node:20-alpine
 
 WORKDIR /app
 
-# Copy ALL files first (including tsconfig.json)
+# Copy package files first
+COPY package*.json ./
+
+# Install all dependencies
+RUN npm install
+
+# Copy source code
 COPY . .
 
-# Install dependencies without running the prepare script
-RUN npm ci --only=production --ignore-scripts || npm install --production --ignore-scripts
+# Build the TypeScript code
+RUN npm run build
 
-# Now run the build with all files present
-RUN npm run build || echo "Build completed with warnings"
+# Ensure the build directory exists
+RUN ls -la build/ || echo "Build directory missing"
 
-# Make the CLI executable
-RUN chmod +x build/cli.js || echo "CLI file will be created on first run"
+# Make CLI executable if it exists
+RUN test -f build/cli.js && chmod +x build/cli.js || true
 
 EXPOSE 3000
 
-CMD ["node", "build/index.js"]
+# Start the SSE server (most common for MCP)
+CMD ["node", "build/index-sse-http.js"]
