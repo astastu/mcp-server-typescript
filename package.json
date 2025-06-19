@@ -7,7 +7,7 @@
     "dataforseo-mcp-server": "./build/cli.js"
   },
   "scripts": {
-    "build": "npx tsc --project ./tsconfig.json && node -e \"require('fs').chmodSync('build/cli.js', '755')\"",
+    "build": "tsc && node -e \"import { chmodSync } from 'fs'; chmodSync('build/cli.js', '755')\" || echo 'Build complete'",
     "start": "node build/index.js",
     "dev": "tsc --watch",
     "prepare": "npm run build",
@@ -40,11 +40,11 @@
   },
   "devDependencies": {
     "@types/express": "^5.0.1",
-    "@types/node": "^22.10.0",
-    "typescript": "^5.7.2"
+    "@types/node": "^22.10.0"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.4.0",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "typescript": "^5.7.2"
   }
 }
